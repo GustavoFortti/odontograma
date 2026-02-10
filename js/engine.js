@@ -172,20 +172,20 @@ Engine.prototype.init = function () {
 
     this.adult = new MenuItem();
     this.adult.setUp(10, 150, 75, 20);
-    this.adult.textBox.text = "Adult";
+    this.adult.textBox.text = "Adulto";
     this.adult.active = true;
     this.buttons.push(this.adult);
 
     this.child = new MenuItem();
     this.child.setUp(90, 150, 75, 20);
-    this.child.textBox.text = "Child";
+    this.child.textBox.text = "Infantil";
     this.child.active = false;
     this.buttons.push(this.child);
 
     this.clear = new MenuItem()
     this.clear = new MenuItem();
     this.clear.setUp((this.canvas.width-10) - 76, 150, 75, 20);
-    this.clear.textBox.text = "Reset";
+    this.clear.textBox.text = "Limpar";
     this.clear.active = false;
     this.buttons.push(this.clear);
 
@@ -211,13 +211,13 @@ Engine.prototype.update = function () {
 
         if (this.settings.DEBUG) {
 
-            this.renderer.renderText("DEBUG MODE", 2, this.canvas.height, "#000000");
+            this.renderer.renderText("MODO DEBUG", 2, this.canvas.height, "#000000");
 
             this.renderer.renderText("X: " + this.cursorX + ", Y: " + this.cursorY,
                 128, this.canvas.height, "#000000");
 
 
-            this.renderer.renderText("Selected Damage : " + this.selectedDamage,
+            this.renderer.renderText("Dano selecionado : " + this.selectedDamage,
                 220, this.canvas.height, "#000000");
         }
 
@@ -1801,7 +1801,7 @@ Engine.prototype.createHeader = function () {
 
     var seperation = 18;
 
-    this.renderer.renderTextCenter16("Odontogram",
+    this.renderer.renderTextCenter16("Odontograma",
         this.renderer.width / 2,
         seperation,
         "#000000");
@@ -1809,7 +1809,7 @@ Engine.prototype.createHeader = function () {
     seperation = 20;
 
 
-    this.renderer.renderText14("Office",
+    this.renderer.renderText14("Consultório",
         4,
         seperation * 2,
         "#000000");
@@ -1820,7 +1820,7 @@ Engine.prototype.createHeader = function () {
         "#000000");
 
 
-    this.renderer.renderText14("Patient",
+    this.renderer.renderText14("Paciente",
         4,
         seperation * 3,
         "#000000");
@@ -1831,7 +1831,7 @@ Engine.prototype.createHeader = function () {
         "#000000");
 
 
-    this.renderer.renderText14("Appoint No.",
+    this.renderer.renderText14("Nº Atendimento",
         4,
         seperation * 4,
         "#000000");
@@ -1841,7 +1841,7 @@ Engine.prototype.createHeader = function () {
         seperation * 4,
         "#000000");
 
-    this.renderer.renderText14("Date",
+    this.renderer.renderText14("Data",
         this.renderer.width / 2,
         seperation * 4,
         "#000000");
@@ -1851,7 +1851,7 @@ Engine.prototype.createHeader = function () {
         seperation * 4,
         "#000000");
 
-    this.renderer.renderText14("Dentist",
+    this.renderer.renderText14("Dentista",
         4,
         seperation * 5,
         "#000000");
@@ -1881,17 +1881,17 @@ Engine.prototype.printPreview = function () {
 
     if (this.settings.DEBUG) {
 
-        this.renderer.renderText("DEBUG MODE", 2, 15, "#000000");
+        this.renderer.renderText("MODO DEBUG", 2, 15, "#000000");
 
         this.renderer.renderText("X: " + this.cursorX + ", Y: " + this.cursorY,
             128, 15, "#000000");
     }
 
-    this.renderer.renderText("Specifications: ", 4, 1200, "#000000");
+    this.renderer.renderText("Especificações: ", 4, 1200, "#000000");
 
     this.renderer.wrapText(this.treatmentData.specs, 8, 1222, this.renderer.width - 8, 14, 5);
 
-    this.renderer.renderText("Observations: ", 4, 1300, "#000000");
+    this.renderer.renderText("Observações: ", 4, 1300, "#000000");
 
     this.renderer.wrapText(this.treatmentData.observations, 8, 1322, this.renderer.width - 8, 14, 5);
 };
@@ -1941,84 +1941,84 @@ Engine.prototype.createMenu = function () {
 
     this.createMenuButton(posX, posY, buttonWidth, buttonHeight, "Caries", 1);
     posX = posX + xSeparator;
-    this.createMenuButton(posX, posY, buttonWidth, buttonHeight, "Crown", 2);
+    this.createMenuButton(posX, posY, buttonWidth, buttonHeight, "Coroa", 2);
     posX = posX + xSeparator;
-    this.createMenuButton(posX, posY, buttonWidth, buttonHeight, "Crown (Tmp)", 3);
+    this.createMenuButton(posX, posY, buttonWidth, buttonHeight, "Coroa (Temp)", 3);
     posX = posX + xSeparator;
-    this.createMenuButton(posX, posY, buttonWidth, buttonHeight, "Missing", 4);
+    this.createMenuButton(posX, posY, buttonWidth, buttonHeight, "Ausente", 4);
     posX = posX + xSeparator;
-    this.createMenuButton(posX, posY, buttonWidth, buttonHeight, "Fracture", 5);
+    this.createMenuButton(posX, posY, buttonWidth, buttonHeight, "Fratura", 5);
     posX = posX + xSeparator;
     this.createMenuButton(posX, posY, buttonWidth, buttonHeight, "Diastema", 8);
 
     posY = posY + buttonHeight + ySeparator;
     posX = startX;
 
-    this.createMenuButton(posX, posY, buttonWidth, buttonHeight, "Filling", 11);
+    this.createMenuButton(posX, posY, buttonWidth, buttonHeight, "Restauração", 11);
     posX = posX + xSeparator;
-    this.createMenuButton(posX, posY, buttonWidth, buttonHeight, "Rem Prost", 12);
+    this.createMenuButton(posX, posY, buttonWidth, buttonHeight, "Prót. Rem.", 12);
     posX = posX + xSeparator;
-    this.createMenuButton(posX, posY, buttonWidth, buttonHeight, "Drifting", 13);
+    this.createMenuButton(posX, posY, buttonWidth, buttonHeight, "Migração", 13);
     posX = posX + xSeparator;
-    this.createMenuButton(posX, posY, buttonWidth, buttonHeight, "Rotation", 14);
+    this.createMenuButton(posX, posY, buttonWidth, buttonHeight, "Giroversão", 14);
     posX = posX + xSeparator;
-    this.createMenuButton(posX, posY, buttonWidth, buttonHeight, "Fusion", 15);
+    this.createMenuButton(posX, posY, buttonWidth, buttonHeight, "Fusão", 15);
     posX = posX + xSeparator;
-    this.createMenuButton(posX, posY, buttonWidth, buttonHeight, "Root Remnant", 16);
+    this.createMenuButton(posX, posY, buttonWidth, buttonHeight, "Rem. Radicular", 16);
 
     posY = posY + buttonHeight + ySeparator;
     posX = startX;
 
-    this.createMenuButton(posX, posY, buttonWidth, buttonHeight, "Eruption", 24);
+    this.createMenuButton(posX, posY, buttonWidth, buttonHeight, "Erupção", 24);
     posX = posX + xSeparator;
-    this.createMenuButton(posX, posY, buttonWidth, buttonHeight, "Transpositon", 25);
+    this.createMenuButton(posX, posY, buttonWidth, buttonHeight, "Transposição", 25);
     posX = posX + xSeparator;
-    this.createMenuButton(posX, posY, buttonWidth, buttonHeight, "Supernumerary", 27);
+    this.createMenuButton(posX, posY, buttonWidth, buttonHeight, "Supranumerário", 27);
     posX = posX + xSeparator;
-    this.createMenuButton(posX, posY, buttonWidth, buttonHeight, "Pulp", 20);
+    this.createMenuButton(posX, posY, buttonWidth, buttonHeight, "Pulpar", 20);
     posX = posX + xSeparator;
-    this.createMenuButton(posX, posY, buttonWidth, buttonHeight, "Prosthesis", 29);
+    this.createMenuButton(posX, posY, buttonWidth, buttonHeight, "Prótese", 29);
     posX = posX + xSeparator;
-    this.createMenuButton(posX, posY, buttonWidth, buttonHeight, "Bolt", 30);
+    this.createMenuButton(posX, posY, buttonWidth, buttonHeight, "Pino", 30);
 
     posY = posY + buttonHeight + ySeparator;
     posX = startX;
 
-    this.createMenuButton(posX, posY, buttonWidth, buttonHeight, "Fixed Ortho", 32);
+    this.createMenuButton(posX, posY, buttonWidth, buttonHeight, "Orto Fixo", 32);
     posX = posX + xSeparator;
-    this.createMenuButton(posX, posY, buttonWidth, buttonHeight, "Fixed Prosth", 34);
+    this.createMenuButton(posX, posY, buttonWidth, buttonHeight, "Prótese Fixa", 34);
     posX = posX + xSeparator;
-    this.createMenuButton(posX, posY, buttonWidth, buttonHeight, "Implant", 6);
+    this.createMenuButton(posX, posY, buttonWidth, buttonHeight, "Implante", 6);
     posX = posX + xSeparator;
     this.createMenuButton(posX, posY, buttonWidth, buttonHeight, "Macrodontia", 17);
     posX = posX + xSeparator;
     this.createMenuButton(posX, posY, buttonWidth, buttonHeight, "Microdontia", 10);
     posX = posX + xSeparator;
-    this.createMenuButton(posX, posY, buttonWidth, buttonHeight, "Dyschromic", 22);
+    this.createMenuButton(posX, posY, buttonWidth, buttonHeight, "Discromia", 22);
 
     posY = posY + buttonHeight + ySeparator;
     posX = startX;
 
-    this.createMenuButton(posX, posY, buttonWidth, buttonHeight, "Worn", 37);
+    this.createMenuButton(posX, posY, buttonWidth, buttonHeight, "Desgastado", 37);
     posX = posX + xSeparator;
-    this.createMenuButton(posX, posY, buttonWidth, buttonHeight, "Impacted Semi", 30);
+    this.createMenuButton(posX, posY, buttonWidth, buttonHeight, "Semi-Impact.", 30);
     posX = posX + xSeparator;
-    this.createMenuButton(posX, posY, buttonWidth, buttonHeight, "Intrusion", 20);
+    this.createMenuButton(posX, posY, buttonWidth, buttonHeight, "Intrusão", 20);
     posX = posX + xSeparator;
-    this.createMenuButton(posX, posY, buttonWidth, buttonHeight, "Edentulism", 31);
+    this.createMenuButton(posX, posY, buttonWidth, buttonHeight, "Edentulismo", 31);
     posX = posX + xSeparator;
-    this.createMenuButton(posX, posY, buttonWidth, buttonHeight, "Ectopic", 21);
+    this.createMenuButton(posX, posY, buttonWidth, buttonHeight, "Ectópico", 21);
     posX = posX + xSeparator;
-    this.createMenuButton(posX, posY, buttonWidth, buttonHeight, "Impacted", 19);
+    this.createMenuButton(posX, posY, buttonWidth, buttonHeight, "Impactado", 19);
 
     posY = posY + buttonHeight + ySeparator;
     posX = startX;
 
-    this.createMenuButton(posX, posY, buttonWidth, buttonHeight, "Rem Orthodo", 23);
+    this.createMenuButton(posX, posY, buttonWidth, buttonHeight, "Orto Rem.", 23);
     posX = posX + xSeparator;
-    this.createMenuButton(posX, posY, buttonWidth, buttonHeight, "Extrusion", 9);
+    this.createMenuButton(posX, posY, buttonWidth, buttonHeight, "Extrusão", 9);
     posX = posX + xSeparator;
-    this.createMenuButton(posX, posY, buttonWidth, buttonHeight, "Post", 10);
+    this.createMenuButton(posX, posY, buttonWidth, buttonHeight, "Pino", 10);
 
 }
 
